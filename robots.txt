@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /biologo/
+Disallow: /professionista/
+Disallow: /commerciale/
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /backup/
+Disallow: /config/

@@ -1,0 +1,23 @@
+{
+    "name": "sertexplus/laboratory-management",
+    "description": "Sistema di gestione per laboratorio di analisi genetiche",
+    "require": {
+        "php": ">=7.4",
+        "phpmailer/phpmailer": "^6.8",
+        "tecnickcom/tcpdf": "^6.6",
+        "phpseclib/phpseclib": "^3.0",
+        "bacon/bacon-qr-code": "^2.0",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "guzzlehttp/guzzle": "^7.8",
+        "dompdf/dompdf": "^2.0",
+        "phpmailer/phpmailer": "^6.8",
+        "setasign/fpdi": "^2.3",
+        "firebase/php-jwt": "^6.8",
+        "monolog/monolog": "^3.0"  // Per logging avanzato
+    },
+    "autoload": {
+        "psr-4": {
+            "SerteX\\": "classes/"
+        }
+    }
+}

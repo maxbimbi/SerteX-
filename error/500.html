@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Errore del Server | SerteX+</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .error-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            color: #f44336;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .error-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .error-message {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .error-icon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        
+        .flask {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .flask-liquid {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 40px;
+            background: #f44336;
+            border-radius: 50%;
+            animation: bubble 2s ease-in-out infinite;
+        }
+        
+        @keyframes bubble {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+        }
+        
+        .btn-home {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+            margin: 0 10px;
+        }
+        
+        .btn-home:hover {
+            background: #1565c0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+        }
+        
+        .btn-reload {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: #1976d2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid #1976d2;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .btn-reload:hover {
+            background: #1976d2;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .dna-icon {
+            width: 30px;
+            height: 30px;
+            fill: #1976d2;
+        }
+        
+        .error-details {
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #c62828;
+            border: 1px solid #ffcdd2;
+        }
+        
+        .support-info {
+            font-size: 14px;
+            color: #999;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="logo">
+            <svg class="dna-icon" viewBox="0 0 24 24">
+                <path d="M7,2C5.9,2 5,2.9 5,4C5,5.1 5.9,6 7,6C8.1,6 9,5.1 9,4C9,2.9 8.1,2 7,2M17,2C15.9,2 15,2.9 15,4C15,5.1 15.9,6 17,6C18.1,6 19,5.1 19,4C19,2.9 18.1,2 17,2M7,18C5.9,18 5,18.9 5,20C5,21.1 5.9,22 7,22C8.1,22 9,21.1 9,20C9,18.9 8.1,18 7,18M17,18C15.9,18 15,18.9 15,20C15,21.1 15.9,22 17,22C18.1,22 19,21.1 19,20C19,18.9 18.1,18 17,18M12,14.5C13.2,14.5 14.2,13.7 14.7,12.5H19V10.5H14.7C14.2,9.3 13.2,8.5 12,8.5C10.8,8.5 9.8,9.3 9.3,10.5H5V12.5H9.3C9.8,13.7 10.8,14.5 12,14.5M8,13V11H7V9H5V11H3V13H5V15H7V13H8M16,15H18V13H20V11H18V9H16V11H14V13H16V15Z"/>

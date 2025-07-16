@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Protezione file sensibili
+<FilesMatch "\.(sql|log|lock)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Protezione directory
+RedirectMatch 404 /\.git
+RedirectMatch 404 /config/
+RedirectMatch 404 /includes/
+RedirectMatch 404 /classes/
+
+# Rewrite rules
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/(.*)$ api/index.php?request=$1 [QSA,NC,L]
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
